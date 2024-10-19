@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>кредитный калькулятор</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>кредитный калькулятор</h1>
+        <form class="form">    
+            <div class="input__group">
+                <label for="loan"> сумма кредита </label>
+                <input id="loan" required type="number" placeholder="введите сумму">
+            </div>
+            <div class="input__group">
+                <label for="percent"> годовой процент </label>
+                <input id="percent" required type="number">
+            </div>
+            <div class="input__group">
+                <label for="srok"> срок кредита </label>
+                <input id="srok" required type="number">
+            </div>
+            <div class="btns">
+                <button class="get">расчитать</button>
+                <button type="reset" class="clear">очистить</button>
+            </div>
+            <div class="itog">
+
+            </div>
+            <div class="months">
+
+            </div>
+        </form>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
