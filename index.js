@@ -14,28 +14,25 @@ getBtn.addEventListener("click", (event) => {
         return
     }
     let monthPay = 0;
-    let ret = 0;
     console.log(monthPay);
     let itogMonth = 0
-    for (let i = 1; i <= srok; i++) {
-        monthPay = loan * ((percent / 12));
+    let total = loan * percent
+    const info = `
+    Сумма кредита: <strong>${loan} ₽ </strong> <br>
+    Годовой процент: <strong>${percent * 100} % </strong> <br>
+    Срок кредита: <strong>${srok} месяцев</strong> <br>
+    Сумма переплаты: <strong>${total} </strong> <br>
+    Полная стоимость: <strong>${loan + total} </strong> <br>
+    `
+    // for (let i = 1; i <= srok; i++) {
+        monthPay = loan * ((percent / srok));
         console.log(monthPay);
-        
-        itogMonth = Math.round(monthPay * 100 ) / 100;
+        itogMonth = (loan / srok) + monthPay
         console.log(itogMonth);
         const m = document.createElement("p")
-        m.textContent = `процент за ${i} месяц равен ${ itogMonth} руб`
+        m.textContent = `платеж за  месяц равен ${ itogMonth} руб`
         months.append(m)
-        ret += itogMonth; 
-    }
-    ret = Math.round(ret + loan)
-    const info = `
-    сумма займа: <strong>${loan} ₽ </strong> <br>
-    годовой процент: <strong>${percent * 100} % </strong> <br>
-    срок кредита: <strong>${srok} месяцев</strong> <br>
-    сумма переплаты: <strong>${ret - loan} </strong> <br>
-    полная стоимость: <strong>${ret} </strong> <br>
-    `
+    // }
     const itog = document.querySelector(".itog")
 
     itog.innerHTML = info
